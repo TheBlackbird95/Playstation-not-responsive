@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+body {
+	background-image: url("background.jpg");
+	background-size: 100%;
+	margin: 0;
+	font: bold 18px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	padding-bottom: 5%;
+}
+
+#container{
+	position: relative;
+	min-height: 100px;
+}
+
+.accimg{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+@media screen and (min-width:1024px) and (max-width:1260px) {
+	#container {
+		width:1100px;
+	}
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+	#container {
+		width:800px;
+	}
+}
+
+@media screen and (max-width:767px) {
+	#container {
+		width:90%;
+	}
+}
+.header {
+	background-color: #F1F1F1;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+.header a p {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 13px;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.logo {
+	position: absolute;
+	animation: logo 20s alternate infinite linear;
+}
+
+@keyframes logo {
+	0% {left: 3%}
+	100% {left: 92%}
+}
+
+.tekst {
+	padding: 3% 5px 0px 5px;
+	color: rgb(192, 192, 192);
+	text-shadow: -0.7px 0 black, 0 0.7px black, 0.7px 0 black, 0 -0.7px black;
+}
+
+.row {
+	padding-top: 80px;
+	color: rgb(192, 192, 192);
+	text-shadow: -0.7px 0 black, 0 0.7px black, 0.7px 0 black, 0 -0.7px black;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	width: 48%;
+	padding: 15px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #f1f1f1;
+	padding: 10px;
+	text-align: center;
+}
+
+.gallery {
+	margin: 5px;
+	float: right;
+}
+
+.gallery:hover {
+	border: 1px solid #777;
+}
+
+.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+.desc {
+	padding: 15px;
+	text-align: center;
+}
+
+.content {
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: rgba(41,16,165,0.20);
+}
+
+#container .accordion {
+	padding-top: 5%;
+	width: 90%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-left: 5%;
+}
+#container .accordion .accordion-item {
+	display: flex;
+	flex-direction: column;
+}
+#container .accordion .accordion-item button {
+	display: block;
+	padding: 20px 20px;
+	width: 100%;
+	background-color: rgba(18,38,192,0.25);
+	color: rgb(192, 192, 192);
+	text-shadow: -0.7px 0 black, 0 0.7px black, 0.7px 0 black, 0 -0.7px black;
+	font-size: 20px;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: .3s ease background;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+#container .accordion .accordion-item .accordion-content {
+	padding: 0 20px;
+	height: 0;
+	display: block;
+	background-color: rgba(18,38,192,0.25);
+	overflow: hidden;
+	transition: .3s ease height;
+	font: 15px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+}
+#container .accordion .accordion-item .accordion-content h1 {
+	margin-top: 50px;
+}
+
+#container .accordion .accordion-item .accordion-content p {
+	margin-bottom: 50px;
+}
+
+#container .accordion .accordion-item.active button,
+#container .accordion .accordion-item button:hover {
+	background-color: rgb(43, 138, 106, 0.5);
+}
+#container .accordion .accordion-item.active .accordion-content {
+	display: block;
+}
+#container .accordion .accordion-item button .icon {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: block;
+}
+#container .accordion .accordion-item button .icon::before,
+#container .accordion .accordion-item button .icon::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	height: 2px;
+	width: 15px;
+	background-color: rgb(0, 0, 0);
+	transform-origin: center;
+	transition: .3s ease transform;
+}
+#container .accordion .accordion-item button .icon::after {
+	transform: rotate(90deg);
+}
+
+#container .accordion .accordion-item.active button .icon::before,
+#container .accordion .accordion-item.active button .icon::after {
+	transform: rotate(360deg);
+}
